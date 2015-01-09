@@ -1,14 +1,17 @@
-CodeView
-========
+Eonil/CodeView
+==============
 2015/01/09
 Hoon H.
+
+**CURRENTLY UNDER DEVELOPMENT.**
 
 Provides a custom-built high-performance code-editing view for Cocoa applications.
 
 `NSTextView` is very good for textual editing, but not for code editing because its backend is too opaque to optimise for.
 I decided to build a fast code editing view by eliminating all the unnecessary features.
 
-**CURRENTLY UNDER DEVELOPMENT**
+
+
 
 Goals 
 -----
@@ -67,9 +70,11 @@ Works To Do
 -	Font rendering tuning. 
 
 
+
+
+
 License
 -------
 MIT licensed.
-
 
 
