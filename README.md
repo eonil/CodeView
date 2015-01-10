@@ -16,15 +16,18 @@ I decided to build a fast code editing view by eliminating all the unnecessary f
 Goals 
 -----
 -	This view is designed for fast rendering and editing of fixed-font code text.
+-	Fully UTF-8 based back-end. So I can replace the backend eventually with something else than `NSString`.
 
 Non-Goals
 ---------
 -	No word-wrap.
+-	No ruler.
 -	No complex layout.
 -	No custom rich text formatting (font/color/styling). Everything will be controlled by predefined logics.
--	No right-to-left layout support.
 -	Perfect international text input. Though I will add a proper support, but I don't focus on it.
 	Actually non-ASCII character keybowrd input are out of interest.
+-	No right-to-left layout support.
+-	No vertical layout support.
 -	Space optimisation. This view is memory hog. Space optimisation is not a current godl. Currently editing of
 	10MiB file needs over 500MiB memory to wire up internal structure.
 -	Large file support. This view is optimised for small-to-mid scale source code. (up to 10 MiB) Support for 
@@ -60,14 +63,31 @@ Works Done
 
 Works To Do
 -----------
+-	Caret management.
 -	Text input.
--	Selection rendering optimisation.
+-	Selection rendering optimisation. (`DrawableLine` caching)
 -	Layout tuning.
 -	Syntax highlighting.
 -	On-demand width extending.
 -	Clipboard support.
 -	Saving (exporting as plain string) support.
 -	Font rendering tuning. 
+
+
+Issues
+------
+-	Graphical line cache needed for on-screen lines.
+
+
+
+
+
+
+
+
+
+
+
 
 
 

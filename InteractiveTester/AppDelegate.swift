@@ -16,8 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	let	codeView	=	CodeView()
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
+		let	dataFilePath	=	"/Users/Eonil/Workshop/Sandbox3/CodeStorage/PerfTest/test-data-ascii-50kb.rs"
+//		let	dataFilePath	=	"/Users/Eonil/Workshop/Sandbox3/CodeStorage/PerfTest/test-data-ascii-500kb.rs"
+
 		window.contentView	=	codeView
-		codeView.loadFileAtPath("/Users/Eonil/Workshop/Sandbox3/CodeStorage/PerfTest/test-data-ascii-50kb.rs")
+		codeView.loadFileAtPath(dataFilePath)
 		codeView.needsLayout	=	true
 	}
 
