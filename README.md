@@ -59,11 +59,12 @@ Works Done
 -	Backend line-based storage.
 -	Rendering
 -	Selecting
+-	Caret management.
+
 
 
 Works To Do
 -----------
--	Caret management.
 -	Text input.
 -	Selection rendering optimisation. (`DrawableLine` caching)
 -	Layout tuning.
