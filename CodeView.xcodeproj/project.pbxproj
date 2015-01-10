@@ -13,6 +13,10 @@
 		45177D501A5F7E9300FAE442 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45177D4E1A5F7E9300FAE442 /* MainMenu.xib */; };
 		45177D761A5F9B0F00FAE442 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45177D751A5F9B0F00FAE442 /* main.swift */; };
 		45177D991A5FA32C00FAE442 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45177D981A5FA32C00FAE442 /* main.swift */; };
+		4540BBE51A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
+		4540BBE61A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
+		4540BBE71A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
+		4540BBE81A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
 		4562D1EF1A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
 		4562D1F01A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
 		4562D1F11A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
@@ -115,6 +119,7 @@
 		45177D961A5FA32C00FAE442 /* PerfTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PerfTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45177D981A5FA32C00FAE442 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45177D9D1A5FA33A00FAE442 /* test-data-ascii-500kb.rs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-data-ascii-500kb.rs"; sourceTree = "<group>"; };
+		4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextInputManager.swift; sourceTree = "<group>"; };
 		4562D1EE1A609FC700FBB9C7 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		4562D1F31A60A7F900FBB9C7 /* CGRect+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utility.swift"; sourceTree = "<group>"; };
 		4562D1F41A60A7F900FBB9C7 /* Range+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+Utility.swift"; sourceTree = "<group>"; };
@@ -262,6 +267,7 @@
 				4562D1FE1A60A81500FBB9C7 /* CaretManager.swift */,
 				4562D2001A60A81500FBB9C7 /* CodeSelectionManager.swift */,
 				4562D1FF1A60A81500FBB9C7 /* CodeRenderingView.swift */,
+				4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4540BBE51A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57CC1A606DE700566841 /* EditLockable.swift in Sources */,
 				45EA57D01A606DE700566841 /* RustCodeStorage.swift in Sources */,
 				45EA57C41A606DE700566841 /* CodeStorage.swift in Sources */,
@@ -471,6 +478,7 @@
 				45EA57C91A606DE700566841 /* Cursor.swift in Sources */,
 				4562D21E1A60A8D700FBB9C7 /* Aliases.swift in Sources */,
 				45177D4B1A5F7E9300FAE442 /* AppDelegate.swift in Sources */,
+				4540BBE61A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57F51A60769300566841 /* StringEncodingUtility.swift in Sources */,
 				4562D1F61A60A7F900FBB9C7 /* CGRect+Utility.swift in Sources */,
 				45EA57D11A606DE700566841 /* RustCodeStorage.swift in Sources */,
@@ -495,6 +503,7 @@
 				45177D761A5F9B0F00FAE442 /* main.swift in Sources */,
 				4562D21F1A60A8D700FBB9C7 /* Aliases.swift in Sources */,
 				45EA58001A6084EC00566841 /* CodeRange.swift in Sources */,
+				4540BBE71A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57FB1A6076B200566841 /* GCDTimer.swift in Sources */,
 				45EA57F61A60769300566841 /* StringEncodingUtility.swift in Sources */,
 				4562D20E1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,
@@ -519,6 +528,7 @@
 				45177D991A5FA32C00FAE442 /* main.swift in Sources */,
 				4562D2201A60A8D700FBB9C7 /* Aliases.swift in Sources */,
 				45EA58011A6084EC00566841 /* CodeRange.swift in Sources */,
+				4540BBE81A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57FC1A6076B200566841 /* GCDTimer.swift in Sources */,
 				45EA57F71A60769300566841 /* StringEncodingUtility.swift in Sources */,
 				4562D20F1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,

@@ -3,7 +3,7 @@ Eonil/CodeView
 2015/01/09
 Hoon H.
 
-**CURRENTLY UNDER DEVELOPMENT.**
+**SUSPENDED.**
 
 Provides a custom-built high-performance code-editing view for Cocoa applications.
 
@@ -67,6 +67,7 @@ Works To Do
 -----------
 -	Text input.
 -	Selection rendering optimisation. (`DrawableLine` caching)
+-	Selection rendering optimisation. (drawing only delta lines)
 -	Layout tuning.
 -	Syntax highlighting.
 -	On-demand width extending.
@@ -77,7 +78,7 @@ Works To Do
 
 Issues
 ------
--	Graphical line cache needed for on-screen lines.
+-	Graphical line cache needed for on-screen lines. (caching `DrawableLine`)
 
 
 

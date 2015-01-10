@@ -159,7 +159,7 @@ class CodeRenderingView: NSView {
 			}
 		}
 
-		let sel	=	owner!.selection.range
+		let	sel	=	delegate!.codeRenderingViewQuerySelectionRange()
 		if sel.isEmpty {
 			if delegate!.codeRenderingViewQueryCaretDisplayState() {
 				drawCaret(sel.startPoint, NSColor.textColor())
@@ -256,6 +256,7 @@ class CodeRenderingView: NSView {
 protocol CodeRenderingViewDelegate: class {
 	///	Returns `true` if the caret is currently visible.
 	func codeRenderingViewQueryCaretDisplayState() -> Bool
+	func codeRenderingViewQuerySelectionRange() -> CodeRange 
 }
 
 
