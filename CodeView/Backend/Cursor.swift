@@ -62,10 +62,15 @@ extension Cursor {
 			
 			self.storage	=	storage
 			self.point		=	point
+			
+			self.lines		=	storage.lines[0..<storage.lines.count]
 		}
 		var	available:Bool {
 			get {
-				return	point.line < storage.lines.count && point.column < currentLine().data.count
+				let	a	=	point.line < lines.count
+				let	b	=	point.column < currentLine().queryDataLength()
+				return	a && b
+//				return	point.line < lines.count && point.column < currentLine().queryDataLength()
 			}
 		}
 		
@@ -90,8 +95,8 @@ extension Cursor {
 			
 			let	ln	=	currentLine()
 			point.column++
-			if point.column == ln.data.endIndex {
-				if let n = ln.next {
+			if point.column == ln.queryDataLength() {
+				if ln.next != nil {
 					point.line		+=	1
 					point.column	=	0
 				} else {
@@ -103,8 +108,10 @@ extension Cursor {
 		private var storage:CodeStorage
 		private var	point:CodePoint
 		
+		private let lines:Slice<CodeLine>	///	Storage must be immutable while bound to a cursor.
+		
 		private func currentLine() -> CodeLine {
-			return	storage.lines[point.line]
+			return	Unmanaged.passUnretained(lines[point.line]).takeUnretainedValue()
 		}
 	}
 }

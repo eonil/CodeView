@@ -185,7 +185,12 @@ extension CodeStorageLineList {
 	}
 }
 
-
+extension CodeStorageLineList {
+	func dataCountOfLineAtIndex(index:Int) -> Int {
+		let	ln	=	Unmanaged<CodeLine>.passUnretained(lines[index])
+		return	ln.takeUnretainedValue().queryDataLength()
+	}
+}
 
 
 
@@ -272,7 +277,8 @@ class CodeLine {
 		}
 		set(v) {
 			precondition(owner == nil || owner!.isEditable)
-			_content	=	v
+			_content			=	v
+			_cache_content_len	=	_content.count
 		}
 	}
 	var	annotation:CodeLineAnnotation? {
@@ -301,6 +307,10 @@ class CodeLine {
 		}
 	}
 	
+	func queryDataLength() -> Int {
+		return	_cache_content_len
+	}
+	
 	////
 
 	private weak var	_owner:CodeStorage?
@@ -309,6 +319,8 @@ class CodeLine {
 	
 	private var	_content	=	ContiguousArray<UTF8.CodeUnit>()
 	private var	_annotation	=	nil as CodeLineAnnotation?
+	
+	private var	_cache_content_len:Int	=	0
 }
 
 extension CodeLine {
@@ -328,6 +340,14 @@ extension CodeLine {
 class CodeLineAnnotation {
 }
 
+
+
+
+
+
+struct CodeLineView {
+	private let	ref:Unmanaged<CodeLine>
+}
 
 
 

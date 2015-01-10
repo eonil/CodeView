@@ -9,7 +9,8 @@
 import Foundation
 
 func readTestData(f:(ContiguousArray<UInt8>)->()) {
-	readAllLines("/Users/Eonil/Workshop/Sandbox3/CodeStorage/PerfTest/test-data-ascii-500kb.rs", f)
+	let	p	=	"/Users/Eonil/Workshop/Incubation/CodeView/PerfTest/test-data-ascii-500kb.rs"
+	readAllLines(p, f)
 }
 
 func readAllLines(path:String, function:(ContiguousArray<UInt8>)->()) {
@@ -50,12 +51,56 @@ for i in 0..<20 {
 	}
 }
 println("done loading. lines: \(s.lines.count), total bytes: \(s.countTotalLength()), c: \(c)")
+sleep(1)
 
-let	c1	=	Cursor(storage: s, point: CodePoint(line: 0, column: 0))
-while c1.available {
-	c1.step()
+//let	c1	=	Cursor(storage: s, point: CodePoint(line: 0, column: 0))
+//var	vv	=	UTF8.CodeUnit(0)
+//while c1.available {
+//	c1.step()
+//	vv	+=	c1.currentUnit
+//}
+//println(vv)
+//println("done stepping. lines: \(s.lines.count), total bytes: \(s.countTotalLength()), c: \(c)")
+
+//var	vv:UTF8.CodeUnit	=	0
+//var	cc	=	0
+//for ln in s.lines {
+//	for u in ln.data {
+//		vv	+=	u
+//	}
+//	cc++
+//}
+//println("sum: \(vv)")
+
+var	vv:UTF8.CodeUnit	=	0
+var	cc	=	0
+var	lg	=	s.lines.generate()
+for ln in lg {
+	var	ug	=	ln.data.generate()
+	for u in ug {
+		vv	+=	u
+	}
+	cc++
 }
-println("done stepping. lines: \(s.lines.count), total bytes: \(s.countTotalLength()), c: \(c)")
+println("sum: \(vv)")
+
+//var	vv:UTF8.CodeUnit	=	0
+//var	cc	=	0
+//for i in 0..<s.lines.count {
+//	for i in 0..<s.lines[i].data.count {
+//		let	u	=	s.lines[i].data[i]
+//		vv	+=	u
+//	}
+//	cc++
+//}
+//println("sum: \(vv)")
+
+//var	vv:UTF8.CodeUnit	=	0
+//var	cur	=	Cursor2(s)
+//while cur.available {
+//	vv	+=	cur.currentUnit
+//}
+//println("sum: \(vv)")
 
 //s.lines.removeRange(1..<s.lines.count-1)
 //println("done removing. lines: \(s.lines.count), total bytes: \(s.countTotalLength()), c: \(c)")

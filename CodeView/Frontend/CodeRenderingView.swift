@@ -305,7 +305,7 @@ private struct DrawableLine {
 	///	TODO:	Optimise.
 	func xForUTF8Index(index:Int) -> CGFloat {
 		let	d1			=	line.data[0..<index]
-		let	s			=	decodeFromUTF8Data(ContiguousArray<UTF8.CodeUnit>(d1))
+		let	s			=	decodeFromUTF8Data(ContiguousArray(d1))
 		let	utf16idx	=	s.utf16Count
 		return	xForUTF16Index(utf16idx)
 	}
