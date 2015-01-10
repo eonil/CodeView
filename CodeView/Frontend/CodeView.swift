@@ -80,7 +80,7 @@ class CodeView: NSView {
 	private let	_storage		=	CodeStorage()
 	private let	_caretman		=	CaretManager()
 	private let	_selection		=	CodeSelectionManager()
-	private let	_inputman		=	CodeTextInputManager()
+//	private let	_inputman		=	CodeTextInputManager()
 	
 	private let	_render			=	CodeRenderingView()
 	private let	_scr			=	NSScrollView()
@@ -142,58 +142,58 @@ internal extension CodeView {
 
 
 
-extension CodeView: NSTextInput {
-	//	Essential methods.
-	func selectedRange() -> NSRange {
-		return	_inputman.selectedRange()
-	}
-	func markedRange() -> NSRange {
-		return	_inputman.markedRange()
-	}
-	func hasMarkedText() -> Bool {
-		return	_inputman.hasMarkedText()
-	}
-	
-	func insertText(aString: AnyObject, replacementRange: NSRange) {
-		_inputman.insertText(aString, replacementRange: replacementRange)
-	}
-	func setMarkedText(aString: AnyObject, selectedRange: NSRange, replacementRange: NSRange) {
-		_inputman.setMarkedText(aString, selectedRange: selectedRange, replacementRange: replacementRange)
-	}
-	func unmarkText() {
-		_inputman.unmarkText()
-	}
-	
-	///	Non-essential methods, but required. Implemented all as just empty.
-	func attributedSubstringForProposedRange(aRange: NSRange, actualRange: NSRangePointer) -> NSAttributedString? {
-		return	nil
-	}
-	func validAttributesForMarkedText() -> [AnyObject] {
-		return	[]
-	}
-	func firstRectForCharacterRange(aRange: NSRange, actualRange: NSRangePointer) -> NSRect {
-		return	CGRect.zeroRect
-	}
-	func characterIndexForPoint(aPoint: NSPoint) -> Int {
-		return	NSNotFound
-	}
-	
-	///	Responder chain management.
-	override var acceptsFirstResponder:Bool {
-		get {
-			return	true
-		}
-	}
-	override func becomeFirstResponder() -> Bool {
-		return	true
-	}
-	override func resignFirstResponder() -> Bool {
-		return	true
-	}
-	override func keyDown(theEvent: NSEvent) {
-		self.inputContext!.handleEvent(theEvent)
-	}
-}
+//extension CodeView: NSTextInput {
+//	//	Essential methods.
+//	func selectedRange() -> NSRange {
+//		return	_inputman.selectedRange()
+//	}
+//	func markedRange() -> NSRange {
+//		return	_inputman.markedRange()
+//	}
+//	func hasMarkedText() -> Bool {
+//		return	_inputman.hasMarkedText()
+//	}
+//	
+//	func insertText(aString: AnyObject, replacementRange: NSRange) {
+//		_inputman.insertText(aString, replacementRange: replacementRange)
+//	}
+//	func setMarkedText(aString: AnyObject, selectedRange: NSRange, replacementRange: NSRange) {
+//		_inputman.setMarkedText(aString, selectedRange: selectedRange, replacementRange: replacementRange)
+//	}
+//	func unmarkText() {
+//		_inputman.unmarkText()
+//	}
+//	
+//	///	Non-essential methods, but required. Implemented all as just empty.
+//	func attributedSubstringForProposedRange(aRange: NSRange, actualRange: NSRangePointer) -> NSAttributedString? {
+//		return	nil
+//	}
+//	func validAttributesForMarkedText() -> [AnyObject] {
+//		return	[]
+//	}
+//	func firstRectForCharacterRange(aRange: NSRange, actualRange: NSRangePointer) -> NSRect {
+//		return	CGRect.zeroRect
+//	}
+//	func characterIndexForPoint(aPoint: NSPoint) -> Int {
+//		return	NSNotFound
+//	}
+//	
+//	///	Responder chain management.
+//	override var acceptsFirstResponder:Bool {
+//		get {
+//			return	true
+//		}
+//	}
+//	override func becomeFirstResponder() -> Bool {
+//		return	true
+//	}
+//	override func resignFirstResponder() -> Bool {
+//		return	true
+//	}
+//	override func keyDown(theEvent: NSEvent) {
+//		self.inputContext!.handleEvent(theEvent)
+//	}
+//}
 
 
 

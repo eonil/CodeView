@@ -3,13 +3,24 @@ Eonil/CodeView
 2015/01/09
 Hoon H.
 
-**SUSPENDED.**
+
+
+
 
 Provides a custom-built high-performance code-editing view for Cocoa applications.
 
 `NSTextView` is very good for textual editing, but not for code editing because its backend is too opaque to optimise for.
 I decided to build a fast code editing view by eliminating all the unnecessary features.
 
+
+
+Suspended Experiment
+--------------------
+This is an experimental implementation of code editor view implemented from scratch without Cocoa text system such as
+`NSTextView`.
+This project initially started due to slow loading of `NSTextView`, but I finally discovered a switch that makes the
+view to load everything very fast, and I suspended this project. This project will not continue until I feel need for 
+this again.
 
 
 
