@@ -81,7 +81,25 @@ extension CodeStorage {
 
 
 
-
+struct CodeStorageLineListGenerator: GeneratorType {
+	init(_ first:CodeLine?) {
+		self.current	=	first
+	}
+	var count:Int {
+		get {
+			return	counter
+		}
+	}
+	mutating func next() -> CodeLine? {
+		counter++
+		
+		let	c	=	current
+		current	=	current?.next
+		return	c
+	}
+	private var	current	=	nil as CodeLine?
+	private var	counter	=	0
+}
 class CodeStorageLineList: SequenceType {
 	private init(owner:CodeStorage) {
 		self.owner	=	owner
@@ -107,8 +125,11 @@ class CodeStorageLineList: SequenceType {
 			return	lines[range]
 		}
 	}
-	func generate() -> Array<CodeLine>.Generator {
-		return	lines.generate()
+//	func generate() -> Array<CodeLine>.Generator {
+//		return	lines.generate()
+//	}
+	func generate() -> CodeStorageLineListGenerator {
+		return	CodeStorageLineListGenerator(first)
 	}
 	
 	func insert(line:CodeLine, index:Int) {
@@ -125,17 +146,11 @@ class CodeStorageLineList: SequenceType {
 		
 		//	Doesn't work. Seems to be a compiler bug.
 		assert(p?.next === n?.prior)
-		p?._next	=	line
-		n?._prior	=	line
-//		if let p1 = p {
-//			p1._next	=	line
-//		}
-//		if let n1 = n {
-//			n1._prior	=	line
-//		}
-		
-		line._prior	=	p
-		line._next	=	n
+		p?.setNext(line)
+		n?.setPrior(line)
+
+		line.setPrior(p)
+		line.setNext(n)
 	}
 	func removeAt(index:Int) {
 		precondition(owner.isEditable)
@@ -143,8 +158,8 @@ class CodeStorageLineList: SequenceType {
 			let	p	=	line.prior
 			let	n	=	line.next
 			
-			p?._next	=	n
-			n?._prior	=	p
+			p?.setNext(n)
+			p?.setPrior(p)
 			line._owner	=	nil
 			line._prior	=	nil
 			line._next	=	nil
@@ -253,7 +268,8 @@ extension CodeStorageLineList {
 
 
 
-
+///	MARK:
+///	MARK:	CodeLine
 
 ///	Line contains ending newline character if one exists.
 ///	`data` will not contain ending NULL. Do not pass the data to C functions as is.
@@ -298,12 +314,12 @@ class CodeLine {
 	}
 	var	prior:CodeLine? {
 		get {
-			return	_prior
+			return	_prior?.takeUnretainedValue()
 		}
 	}
 	var	next:CodeLine? {
 		get {
-			return	_next
+			return	_next?.takeUnretainedValue()
 		}
 	}
 	
@@ -314,13 +330,23 @@ class CodeLine {
 	////
 
 	private weak var	_owner:CodeStorage?
-	private weak var	_prior:CodeLine?
-	private weak var	_next:CodeLine?
+//	private weak var	_prior:CodeLine?
+//	private weak var	_next:CodeLine?
+	
+	private var	_prior:Unmanaged<CodeLine>?
+	private var _next:Unmanaged<CodeLine>?
 	
 	private var	_content	=	ContiguousArray<UTF8.CodeUnit>()
 	private var	_annotation	=	nil as CodeLineAnnotation?
 	
 	private var	_cache_content_len:Int	=	0
+	
+	private func setPrior(line:CodeLine?) {
+		_prior	=	line == nil ? nil : Unmanaged<CodeLine>.passUnretained(line!)
+	}
+	private func setNext(line:CodeLine?) {
+		_next	=	line == nil ? nil : Unmanaged<CodeLine>.passUnretained(line!)
+	}
 }
 
 extension CodeLine {
@@ -333,6 +359,10 @@ extension CodeLine {
 			data	=	encodeToUTF8Data(v)
 		}
 	}
+	
+	func generateColumns() -> CodeLineColumnGenerator {
+		return	CodeLineColumnGenerator(_content.generate())
+	}
 }
 
 ///	Designed to be subclasses.
@@ -344,6 +374,23 @@ class CodeLineAnnotation {
 
 
 
+struct CodeLineColumnGenerator: GeneratorType {
+	init(_ g:ContiguousArray<UTF8.CodeUnit>.Generator) {
+		self._g	=	g
+		self._c	=	0
+	}
+	var	count:Int {
+		get {
+			return	_c
+		}
+	}
+	mutating func next() -> UTF8.CodeUnit? {
+		_c++
+		return	_g.next()
+	}
+	private var	_g	:	ContiguousArray<UTF8.CodeUnit>.Generator
+	private var	_c	:	Int
+}
 
 struct CodeLineView {
 	private let	ref:Unmanaged<CodeLine>

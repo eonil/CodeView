@@ -8,6 +8,9 @@
 
 import Foundation
 
+func decodeFromUTF8Data(data:Array<UTF8.CodeUnit>) -> String {
+	return	decodeFromUTF8Data(ContiguousArray(data))
+}
 func decodeFromUTF8Data(data:ContiguousArray<UTF8.CodeUnit>) -> String {
 	var	e	=	UTF8()
 	var	g	=	data.generate()

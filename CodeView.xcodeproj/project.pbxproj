@@ -17,6 +17,16 @@
 		4540BBE61A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
 		4540BBE71A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
 		4540BBE81A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */; };
+		45479ACE1A6133BA00B454F6 /* Tokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACD1A6133BA00B454F6 /* Tokeniser.swift */; };
+		45479AD01A6133C600B454F6 /* UTF8CodeUnitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */; };
+		45479AD11A6133F900B454F6 /* Tokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACD1A6133BA00B454F6 /* Tokeniser.swift */; };
+		45479AD21A6133F900B454F6 /* Tokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACD1A6133BA00B454F6 /* Tokeniser.swift */; };
+		45479AD31A6133F900B454F6 /* Tokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACD1A6133BA00B454F6 /* Tokeniser.swift */; };
+		45479AD41A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */; };
+		45479AD51A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */; };
+		45479AD61A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */; };
+		45479AD81A61408800B454F6 /* codeLineGraphTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479AD71A61408800B454F6 /* codeLineGraphTest1.swift */; };
+		45479ADA1A6140A500B454F6 /* ParserTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45479AD91A6140A500B454F6 /* ParserTest1.swift */; };
 		4562D1EF1A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
 		4562D1F01A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
 		4562D1F11A609FC700FBB9C7 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562D1EE1A609FC700FBB9C7 /* Assert.swift */; };
@@ -52,10 +62,6 @@
 		458093651A5FC03600788D78 /* test-data-ascii-50kb.rs in Resources */ = {isa = PBXBuildFile; fileRef = 458093641A5FC03600788D78 /* test-data-ascii-50kb.rs */; };
 		45AA47141A611412002719DD /* OBJCCodeLine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45AA47131A611412002719DD /* OBJCCodeLine.mm */; };
 		45AA47161A61141D002719DD /* OBJCCodeLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 45AA47151A61141D002719DD /* OBJCCodeLine.h */; };
-		45AA47261A612072002719DD /* Cursor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA47251A612072002719DD /* Cursor2.swift */; };
-		45AA47271A612075002719DD /* Cursor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA47251A612072002719DD /* Cursor2.swift */; };
-		45AA47281A612075002719DD /* Cursor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA47251A612072002719DD /* Cursor2.swift */; };
-		45AA47291A612076002719DD /* Cursor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA47251A612072002719DD /* Cursor2.swift */; };
 		45EA57BF1A606DE700566841 /* CodeStorage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA57B81A606DE700566841 /* CodeStorage+Utility.swift */; };
 		45EA57C01A606DE700566841 /* CodeStorage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA57B81A606DE700566841 /* CodeStorage+Utility.swift */; };
 		45EA57C11A606DE700566841 /* CodeStorage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA57B81A606DE700566841 /* CodeStorage+Utility.swift */; };
@@ -126,6 +132,10 @@
 		45177D981A5FA32C00FAE442 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45177D9D1A5FA33A00FAE442 /* test-data-ascii-500kb.rs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test-data-ascii-500kb.rs"; sourceTree = "<group>"; };
 		4540BBE41A60B9C900BC7F56 /* CodeTextInputManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextInputManager.swift; sourceTree = "<group>"; };
+		45479ACD1A6133BA00B454F6 /* Tokeniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokeniser.swift; sourceTree = "<group>"; };
+		45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTF8CodeUnitGenerator.swift; sourceTree = "<group>"; };
+		45479AD71A61408800B454F6 /* codeLineGraphTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = codeLineGraphTest1.swift; sourceTree = "<group>"; };
+		45479AD91A6140A500B454F6 /* ParserTest1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTest1.swift; sourceTree = "<group>"; };
 		4562D1EE1A609FC700FBB9C7 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		4562D1F31A60A7F900FBB9C7 /* CGRect+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Utility.swift"; sourceTree = "<group>"; };
 		4562D1F41A60A7F900FBB9C7 /* Range+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+Utility.swift"; sourceTree = "<group>"; };
@@ -138,7 +148,6 @@
 		4593C05D1A60077A00E86A08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45AA47131A611412002719DD /* OBJCCodeLine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OBJCCodeLine.mm; sourceTree = "<group>"; };
 		45AA47151A61141D002719DD /* OBJCCodeLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBJCCodeLine.h; sourceTree = "<group>"; };
-		45AA47251A612072002719DD /* Cursor2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor2.swift; sourceTree = "<group>"; };
 		45EA57B81A606DE700566841 /* CodeStorage+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CodeStorage+Utility.swift"; sourceTree = "<group>"; };
 		45EA57BA1A606DE700566841 /* CodeStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeStorage.swift; sourceTree = "<group>"; };
 		45EA57BB1A606DE700566841 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
@@ -255,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				45177D751A5F9B0F00FAE442 /* main.swift */,
+				45479AD71A61408800B454F6 /* codeLineGraphTest1.swift */,
+				45479AD91A6140A500B454F6 /* ParserTest1.swift */,
 			);
 			path = UnitTest;
 			sourceTree = "<group>";
@@ -287,7 +298,8 @@
 				45EA57B81A606DE700566841 /* CodeStorage+Utility.swift */,
 				45EA57BA1A606DE700566841 /* CodeStorage.swift */,
 				45EA57BB1A606DE700566841 /* Cursor.swift */,
-				45AA47251A612072002719DD /* Cursor2.swift */,
+				45479ACF1A6133C600B454F6 /* UTF8CodeUnitGenerator.swift */,
+				45479ACD1A6133BA00B454F6 /* Tokeniser.swift */,
 				45EA57FD1A6084EC00566841 /* CodeRange.swift */,
 				45EA57BC1A606DE700566841 /* EditLockable.swift */,
 				45EA57BD1A606DE700566841 /* RustCodeStorage.swift */,
@@ -465,12 +477,12 @@
 			files = (
 				4540BBE51A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57CC1A606DE700566841 /* EditLockable.swift in Sources */,
+				45479AD01A6133C600B454F6 /* UTF8CodeUnitGenerator.swift in Sources */,
 				45EA57D01A606DE700566841 /* RustCodeStorage.swift in Sources */,
 				45EA57C41A606DE700566841 /* CodeStorage.swift in Sources */,
 				45AA47141A611412002719DD /* OBJCCodeLine.mm in Sources */,
 				45EA57C81A606DE700566841 /* Cursor.swift in Sources */,
 				4562D2041A60A81500FBB9C7 /* CaretManager.swift in Sources */,
-				45AA47261A612072002719DD /* Cursor2.swift in Sources */,
 				4562D2101A60A81500FBB9C7 /* CodeView.swift in Sources */,
 				4562D1F51A60A7F900FBB9C7 /* CGRect+Utility.swift in Sources */,
 				4562D1F91A60A7F900FBB9C7 /* Range+Utility.swift in Sources */,
@@ -481,6 +493,7 @@
 				4562D20C1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,
 				45EA57BF1A606DE700566841 /* CodeStorage+Utility.swift in Sources */,
 				45EA57F91A6076B200566841 /* GCDTimer.swift in Sources */,
+				45479ACE1A6133BA00B454F6 /* Tokeniser.swift in Sources */,
 				4562D2081A60A81500FBB9C7 /* CodeRenderingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,14 +509,15 @@
 				4540BBE61A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57F51A60769300566841 /* StringEncodingUtility.swift in Sources */,
 				4562D1F61A60A7F900FBB9C7 /* CGRect+Utility.swift in Sources */,
-				45AA47271A612075002719DD /* Cursor2.swift in Sources */,
 				45EA57D11A606DE700566841 /* RustCodeStorage.swift in Sources */,
 				4562D2091A60A81500FBB9C7 /* CodeRenderingView.swift in Sources */,
 				45EA57FA1A6076B200566841 /* GCDTimer.swift in Sources */,
 				4562D20D1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,
+				45479AD11A6133F900B454F6 /* Tokeniser.swift in Sources */,
 				45EA57CD1A606DE700566841 /* EditLockable.swift in Sources */,
 				4562D2051A60A81500FBB9C7 /* CaretManager.swift in Sources */,
 				4562D2111A60A81500FBB9C7 /* CodeView.swift in Sources */,
+				45479AD51A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */,
 				45EA57FF1A6084EC00566841 /* CodeRange.swift in Sources */,
 				45EA57C01A606DE700566841 /* CodeStorage+Utility.swift in Sources */,
 				4562D1FA1A60A7F900FBB9C7 /* Range+Utility.swift in Sources */,
@@ -519,17 +533,20 @@
 				45177D761A5F9B0F00FAE442 /* main.swift in Sources */,
 				4562D21F1A60A8D700FBB9C7 /* Aliases.swift in Sources */,
 				45EA58001A6084EC00566841 /* CodeRange.swift in Sources */,
+				45479ADA1A6140A500B454F6 /* ParserTest1.swift in Sources */,
 				4540BBE71A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57FB1A6076B200566841 /* GCDTimer.swift in Sources */,
 				45EA57F61A60769300566841 /* StringEncodingUtility.swift in Sources */,
-				45AA47281A612075002719DD /* Cursor2.swift in Sources */,
 				4562D20E1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,
+				45479AD81A61408800B454F6 /* codeLineGraphTest1.swift in Sources */,
 				4562D1F11A609FC700FBB9C7 /* Assert.swift in Sources */,
 				4562D1F71A60A7F900FBB9C7 /* CGRect+Utility.swift in Sources */,
 				4562D2061A60A81500FBB9C7 /* CaretManager.swift in Sources */,
+				45479AD21A6133F900B454F6 /* Tokeniser.swift in Sources */,
 				45EA57C11A606DE700566841 /* CodeStorage+Utility.swift in Sources */,
 				4562D1FB1A60A7F900FBB9C7 /* Range+Utility.swift in Sources */,
 				45EA57CE1A606DE700566841 /* EditLockable.swift in Sources */,
+				45479AD41A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */,
 				4562D2121A60A81500FBB9C7 /* CodeView.swift in Sources */,
 				45EA57CA1A606DE700566841 /* Cursor.swift in Sources */,
 				4562D20A1A60A81500FBB9C7 /* CodeRenderingView.swift in Sources */,
@@ -548,14 +565,15 @@
 				4540BBE81A60B9C900BC7F56 /* CodeTextInputManager.swift in Sources */,
 				45EA57FC1A6076B200566841 /* GCDTimer.swift in Sources */,
 				45EA57F71A60769300566841 /* StringEncodingUtility.swift in Sources */,
-				45AA47291A612076002719DD /* Cursor2.swift in Sources */,
 				4562D20F1A60A81500FBB9C7 /* CodeSelectionManager.swift in Sources */,
 				4562D1F21A609FC700FBB9C7 /* Assert.swift in Sources */,
 				4562D1F81A60A7F900FBB9C7 /* CGRect+Utility.swift in Sources */,
 				4562D2071A60A81500FBB9C7 /* CaretManager.swift in Sources */,
+				45479AD31A6133F900B454F6 /* Tokeniser.swift in Sources */,
 				45EA57C21A606DE700566841 /* CodeStorage+Utility.swift in Sources */,
 				4562D1FC1A60A7F900FBB9C7 /* Range+Utility.swift in Sources */,
 				45EA57CF1A606DE700566841 /* EditLockable.swift in Sources */,
+				45479AD61A6133FF00B454F6 /* UTF8CodeUnitGenerator.swift in Sources */,
 				4562D2131A60A81500FBB9C7 /* CodeView.swift in Sources */,
 				45EA57CB1A606DE700566841 /* Cursor.swift in Sources */,
 				4562D20B1A60A81500FBB9C7 /* CodeRenderingView.swift in Sources */,

@@ -72,17 +72,17 @@ sleep(1)
 //}
 //println("sum: \(vv)")
 
-var	vv:UTF8.CodeUnit	=	0
-var	cc	=	0
-var	lg	=	s.lines.generate()
-for ln in lg {
-	var	ug	=	ln.data.generate()
-	for u in ug {
-		vv	+=	u
-	}
-	cc++
-}
-println("sum: \(vv)")
+//var	vv:UTF8.CodeUnit	=	0
+//var	cc	=	0
+//var	lg	=	s.lines.generate()
+//for ln in lg {
+//	var	ug	=	ln.data.generate()
+//	for u in ug {
+//		vv	+=	u
+//		cc++
+//	}
+//}
+//println("sum: \(vv) \(cc)")
 
 //var	vv:UTF8.CodeUnit	=	0
 //var	cc	=	0
@@ -101,6 +101,110 @@ println("sum: \(vv)")
 //	vv	+=	cur.currentUnit
 //}
 //println("sum: \(vv)")
+
+
+
+
+
+//var	g		=	UTF8CodeUnitGenerator(s)
+//var	NLc		=	0
+//var	TABc	=	0
+//var	SPCc	=	0
+//
+//while let u = g.next() {
+//	switch u {
+//	case 10:
+//		NLc++
+//	case 9:
+//		TABc++
+//	case 32:
+//		SPCc++
+//	default:
+//		break
+//	}
+//}
+//println("NL count: \(NLc)")
+//println("TAB count: \(TABc)")
+//println("SPC count: \(SPCc)")
+
+
+
+
+
+//var	det1	=	CSingleLineCommentToken()
+//var	det2	=	CMultilineBlockCommentTokeniser()
+//var	buffer	=	[U8]()
+//var	cmts	=	[[U8]]()
+//
+//var	g	=	UTF8CodeUnitGenerator(s)
+//while let u = g.next() {
+////	det1.step(u, g)
+////	switch det1.state {
+////	case .Progressing:
+////		buffer.append(u)
+////		
+////	case .Pass:
+////		buffer.append(u)
+////		cmts.append(buffer)
+////		
+////		det1	=	CSingleLineCommentToken()
+////		buffer.removeAll(keepCapacity: true)
+////		
+////	case .Fail:
+////		det1	=	CSingleLineCommentToken()
+////		buffer.removeAll(keepCapacity: true)
+////		
+////	}
+//	
+//	det2.step(u, g)
+//	switch det2.state {
+//	case .Progressing:
+//		buffer.append(u)
+//		
+//	case .Pass:
+//		buffer.append(u)
+//		cmts.append(buffer)
+//		
+//		det2	=	CMultilineBlockCommentTokeniser()
+//		buffer.removeAll(keepCapacity: true)
+//
+//	case .Fail:
+//		det2	=	CMultilineBlockCommentTokeniser()
+//		buffer.removeAll(keepCapacity: true)
+//		
+//	}
+//}
+//
+//
+//for cmt in cmts {
+//	let	s	=	decodeFromUTF8Data(cmt)
+//	println(s)
+//}
+
+
+
+
+
+
+
+
+
+
+var	g	=	UTF8CodeUnitGenerator(s)
+var	p	=	Tokeniser(g)
+while p.available {
+	p.step(&g)
+}
+
+//for cmt in p.tokens {
+//	let	s	=	decodeFromUTF8Data(cmt)
+//	println(s)
+//}
+println("count = \(p.tokens.count)")
+
+
+
+
 
 //s.lines.removeRange(1..<s.lines.count-1)
 //println("done removing. lines: \(s.lines.count), total bytes: \(s.countTotalLength()), c: \(c)")
